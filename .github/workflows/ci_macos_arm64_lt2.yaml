@@ -18,8 +18,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        libt_version: ["v2.0.11", "RC_2_0"]
-        qbt_gui: ["GUI=ON", "GUI=OFF"]
+        libt_version: ${{ github.event_name == 'workflow_dispatch' && fromJSON('["v2.0.11"]') || fromJSON('["v2.0.11", "RC_2_0"]') }}
+        qbt_gui: ${{ github.event_name == 'workflow_dispatch' && fromJSON('["GUI=ON"]') || fromJSON('["GUI=ON", "GUI=OFF"]') }}
         qt_version: ["6.9.3"]
 
     env:
