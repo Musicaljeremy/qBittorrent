@@ -1,6 +1,6 @@
 name: CI - macOS arm64 (libtorrent 2.0.x)
 
-on: [pull_request, push]
+on: [pull_request, push, workflow_dispatch]
 
 permissions: {}
 
